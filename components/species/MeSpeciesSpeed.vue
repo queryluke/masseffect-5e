@@ -27,8 +27,9 @@ export default {
         })
       })
       const list = this.$t(`lists.comma_list[${speedsTextArray.length}]`, speedsTextArray)
+      const listDisplay = list === 'None' ? '' : list
       const text = this.item.speedColor ? `${this.item.speedColor} ` : ''
-      return `${text}${list}`
+      return `${text}${listDisplay}`
     }
   }
 }

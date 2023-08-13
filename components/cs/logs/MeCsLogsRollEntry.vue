@@ -53,17 +53,7 @@
         </div>
         <v-divider />
         <v-card-actions>
-          <!-- TODO: color based on next roll -->
-          <v-btn
-            v-for="(roll, index) of entry.nextRolls"
-            :key="`add-roll-${index}`"
-            text
-            small
-            color="red darken-4"
-            @click.stop="makeNextRoll(index)"
-          >
-            {{ roll.text }}
-          </v-btn>
+          <me-cs-logs-roll-next-roll v-for="(roll, index) of entry.nextRolls" :key="`add-roll-${index}`" :next-roll="roll" />
           <v-spacer />
           <v-btn text small color="primary" @click.stop="reroll()">
             reroll
@@ -112,18 +102,13 @@ export default {
     }
   },
   methods: {
-    makeNextRoll (index) {
-      const nextRoll = this.entry.nextRolls[index]?.roll
-      if (nextRoll?.notation) {
-        this.$store.dispatch('character/roller/ROLL', nextRoll)
-      }
-    },
     reroll () {
       const payload = {
         detail: this.data.detail,
         type: this.data.type,
         notation: this.data.notation,
-        text: this.data.text
+        text: this.data.text,
+        nextRolls: this.entry.nextRolls
       }
       this.$store.dispatch('character/roller/ROLL', payload)
     }

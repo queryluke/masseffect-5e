@@ -74,7 +74,7 @@
                           :value="klass.hitPoints[index]"
                           :label="'Lvl. ' + (index + 1)"
                           :readonly="index === 0"
-                          :disabled="index === 0"
+                          :disabled="index === 0 && klassIndex === 0"
                           @change="updateHp($event, index)"
                         />
                       </v-col>

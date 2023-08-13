@@ -266,18 +266,20 @@ export const getters = {
       baseMechanics = p.merge ? merge(cloneDeep(baseMechanics), cloneDeep(p.merge)) : baseMechanics
       const mod = p.mod || getters.klassPowercastingAbilities[p.klass] || defaultPcAbility[power.type]
       const baseAttackMod = baseMechanics.attack?.mod === 'pc' ? false : baseMechanics.attack?.mod
+      const bonusSpellAttackMod = rootGetters['character/settings'].attackSpellMod || 0
+      const bonusSpellDamageMod = rootGetters['character/settings'].damageSpellMod || 0
       const baseDcMod = baseMechanics.dc?.mod === 'pc' ? false : baseMechanics.dc?.mod
       const attack = baseMechanics.attack
-        ? { ...baseMechanics.attack, mod: baseAttackMod || mod }
+        ? { ...baseMechanics.attack, mod: baseAttackMod || mod, bonus: { type: 'flat', value: bonusSpellAttackMod } }
         : false
       const dc = baseMechanics.dc
-        ? { ...baseMechanics.dc, mod: baseDcMod || mod }
+        ? { ...baseMechanics.dc, mod: baseDcMod || mod, bonus: { type: 'flat', value: bonusSpellAttackMod } }
         : false
       const damage = baseMechanics.damage
         ? baseMechanics.damage.map((i) => {
           return i.mod && i.mod === 'pc'
-            ? { ...i, mod }
-            : i
+            ? { ...i, mod, bonus: { type: 'flat', value: bonusSpellDamageMod } }
+            : { ...i, bonus: { type: 'flat', value: bonusSpellDamageMod } }
         })
         : false
       const resource = p.resource || baseMechanics.resource
