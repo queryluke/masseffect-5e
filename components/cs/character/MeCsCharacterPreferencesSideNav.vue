@@ -27,14 +27,30 @@
       </v-list-item-icon>
     </v-list-item>
     <v-subheader>
+      Ability Scores
+    </v-subheader>
+    <v-list-item>
+      <v-list-item-action>
+        <v-switch :input-value="options.abilityScoreOnTop === true" :disabled="viewOnly || loading" :false-value="false" :true-value="true" @change="change('abilityScoreOnTop', $event)" />
+      </v-list-item-action>
+      <v-list-item-title>
+        Show Scores Above Modifiers
+      </v-list-item-title>
+    </v-list-item>
+    <v-subheader>
       Webhooks
     </v-subheader>
     <v-list-item v-for="webhook of webhooks" :key="webhook.id">
       <v-list-item-action>
-        <v-switch :input-value="characterInWebhook(webhook) !== -1" :disabled="viewOnly || loading" :false-value="false" :true-value="true" @change="toggleWebhook(webhook, $event)"/>
+        <v-switch :input-value="characterInWebhook(webhook) !== -1" :disabled="viewOnly || loading" :false-value="false" :true-value="true" @change="toggleWebhook(webhook, $event)" />
       </v-list-item-action>
       <v-list-item-title>
         {{ webhook.name }}
+      </v-list-item-title>
+    </v-list-item>
+    <v-list-item v-if="!webhooks || !webhooks.length">
+      <v-list-item-title class="text-wrap">
+        <i>Add Discord Webhooks under your <a href="/profile">user profile</a>. Once you do, you can activate them here to forward your rolls to the webhook. (You must be logged in to the website to use webhooks.)</i>
       </v-list-item-title>
     </v-list-item>
   </v-list>

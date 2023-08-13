@@ -14,12 +14,12 @@
             </div>
             <me-cs-roll-card :roll="roll(ability)">
               <div class="text-h6">
-                {{ modText(abilityBreakdown[ability].mod) }}
+                {{ swapScorePositions ? abilityBreakdown[ability].total : modText(abilityBreakdown[ability].mod) }}
               </div>
             </me-cs-roll-card>
           </div>
           <div>
-            {{ abilityBreakdown[ability].total }}
+            {{ swapScorePositions ? modText(abilityBreakdown[ability].mod) : abilityBreakdown[ability].total }}
           </div>
         </v-card>
       </v-col>
@@ -43,7 +43,13 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ abilityBreakdown: 'abilities/abilityBreakdown', disadvantageFromHeavierArmor: 'profs/disadvantageFromHeavierArmor' })
+    ...mapGetters({ abilityBreakdown: 'abilities/abilityBreakdown', disadvantageFromHeavierArmor: 'profs/disadvantageFromHeavierArmor' }),
+    options () {
+      return this.$store.getters['character/character'].options
+    },
+    swapScorePositions () {
+      return this.options.abilityScoreOnTop === true
+    }
   },
   methods: {
     roll (ability) {
