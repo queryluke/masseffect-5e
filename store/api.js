@@ -87,7 +87,7 @@ export const actions = {
     const URL = payload.webhook
     let avatarUrl = rootGetters['character/image']
     // if it's an internal file, we need to add the absolute URL for discord to find the image
-    avatarUrl = avatarUrl.includes('http') ? avatarUrl : window.origin + avatarUrl
+    avatarUrl = avatarUrl.includes('http') ? avatarUrl : (window.origin + avatarUrl)
     const body = JSON.stringify({
       username: (payload.entry.source.name || rootGetters['user/profile'].username || 'No Name'),
       avatar_url: avatarUrl,
